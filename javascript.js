@@ -19,6 +19,11 @@ function cpuJoga() {
         }else if(nivel==2) {
             //NIVEL 2
         }
+        verifica=verificarVitoria();
+        if(verifica!="") {
+            alert(`${verifica} venceu`);
+            jogando=false;
+        }
         atualizarTabuleiro();
         quemJoga=0;
     }
@@ -45,6 +50,7 @@ function verificarVitoria() {
     if(jogo[0][2]==jogo[1][1]&&jogo[1][1]==jogo[2][0]) {
         return jogo[0][2];
     }
+    return "";
 }
 
 function jogar(p) {
@@ -105,7 +111,15 @@ function jogar(p) {
                 }
                 break;
         }
-        atualizarTabuleiro();
+        if(quemJoga==1) {
+            atualizarTabuleiro();
+            verifica=verificarVitoria();
+            if(verifica!="") {
+                alert(`${verifica} venceu`);
+                jogando=false;
+            }
+            cpuJoga();
+        }
     }
 }
 

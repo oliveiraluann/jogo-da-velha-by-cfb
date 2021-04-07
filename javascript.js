@@ -7,6 +7,46 @@ let nivel=1;
 let jogadaCpu=1;
 let quemComeca;
 
+function cpuJoga() {
+    if(jogando) {
+        let l,c;
+        if(nivel==1) {
+            do {
+                l=Math.round(Math.random()*2);
+                c=Math.round(Math.random()*2);
+            }while(jogo[l][c]!="");
+            jogo[l][c]="O";
+        }else if(nivel==2) {
+            //NIVEL 2
+        }
+        atualizarTabuleiro();
+        quemJoga=0;
+    }
+}
+
+function verificarVitoria() {
+    let l,c;
+    //LINHAS
+    for(l=0;l<3;l++) {
+        if(jogo[l][0]==jogo[l][1]&&jogo[l][1]==jogo[l][2]) {
+            return jogo[l][0];
+        }
+    }
+    //COLUNAS
+    for(c=0;c<3;c++) {
+        if(jogo[0][c]==jogo[1][c]&&jogo[1][c]==jogo[2][c]) {
+            return jogo[0][c];
+        }
+    }
+    //DIAGONAIS
+    if(jogo[0][0]==jogo[1][1]&&jogo[1][1]==jogo[2][2]) {
+        return jogo[0][0];
+    }
+    if(jogo[0][2]==jogo[1][1]&&jogo[1][1]==jogo[2][0]) {
+        return jogo[0][2];
+    }
+}
+
 function jogar(p) {
     if(jogando && quemJoga==0) {
         switch(p) {
@@ -58,7 +98,7 @@ function jogar(p) {
                     quemJoga=1;
                 }
                 break;
-            default:
+            default: //Caso 9
                 if(jogo[2][2]=="") {
                     jogo[2][2]="X";
                     quemJoga=1;

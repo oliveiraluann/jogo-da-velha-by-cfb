@@ -153,6 +153,17 @@ function iniciar() {
         [document.getElementById("p4"),document.getElementById("p5"),document.getElementById("p6")],
         [document.getElementById("p7"),document.getElementById("p8"),document.getElementById("p9")]
     ]
+    atualizarTabuleiro();
+    if(quemComeca==1) {
+        quemComeca=0;
+        quemJoga=quemComeca;
+        document.getElementById("quemComeca").innerHTML="Quem Começa: Jogador";
+    }else {
+        quemComeca=1;
+        quemJoga=quemComeca;
+        document.getElementById("quemComeca").innerHTML="Quem Começa: CPU";
+        cpuJoga();
+    }
 }
 
 window.addEventListener("load", iniciar);

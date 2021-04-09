@@ -17,7 +17,71 @@ function cpuJoga() {
             }while(jogo[l][c]!="");
             jogo[l][c]="O";
         }else if(nivel==2) {
-            //NIVEL 2
+            //ATAQUE
+            //Jogada linha 1
+            if(jogo[0][0]=="O"&&jogo[0][1]=="O"&&jogo[0][2]=="") {
+                jogo[0][2]="O";
+            }else if(jogo[0][0]=="O"&&jogo[0][2]=="O"&&jogo[0][1]=="") {
+                jogo[0][1]="O";
+            }else if(jogo[0][1]=="O"&&jogo[0][2]=="O"&&jogo[0][0]=="") {
+                jogo[0][0]="O";
+            }else 
+            //Jogada linha 2
+            if(jogo[1][0]=="O"&&jogo[1][1]=="O"&&jogo[1][2]=="") {
+                jogo[1][2]="O";
+            }else if(jogo[1][0]=="O"&&jogo[1][2]=="O"&&jogo[1][1]=="") {
+                jogo[1][1]="O";
+            }else if(jogo[1][1]=="O"&&jogo[1][2]=="O"&&jogo[1][0]=="") {
+                jogo[1][0]="O";
+            }else
+            //Jogada linha 3
+            if(jogo[2][0]=="O"&&jogo[2][1]=="O"&&jogo[2][2]=="") {
+                jogo[2][2]="O";
+            }else if(jogo[2][0]=="O"&&jogo[2][2]=="O"&&jogo[2][1]=="") {
+                jogo[2][1]="O";
+            }else if(jogo[2][1]=="O"&&jogo[2][2]=="O"&&jogo[2][0]=="") {
+                jogo[2][0]="O";
+            }else
+            //Jogada coluna 1
+            if(jogo[0][0]=="O"&&jogo[1][0]=="O"&&jogo[2][0]=="") {
+                jogo[2][0]="O";
+            }else if(jogo[0][0]=="O"&&jogo[2][0]=="O"&&jogo[1][0]=="") {
+                jogo[1][0]="O";
+            }else if(jogo[1][0]=="O"&&jogo[2][0]=="O"&&jogo[0][0]=="") {
+                jogo[0][0]="O";
+            }else 
+            //Jogada coluna 2
+            if(jogo[0][1]=="O"&&jogo[1][1]=="O"&&jogo[2][1]=="") {
+                jogo[2][1]="O";
+            }else if(jogo[0][1]=="O"&&jogo[2][1]=="O"&&jogo[1][1]=="") {
+                jogo[1][1]="O";
+            }else if(jogo[1][1]=="O"&&jogo[2][1]=="O"&&jogo[0][1]=="") {
+                jogo[0][1]="O";
+            }else 
+            //Jogada coluna 3
+            if(jogo[0][2]=="O"&&jogo[1][2]=="O"&&jogo[2][2]=="") {
+                jogo[2][2]="O";
+            }else if(jogo[0][2]=="O"&&jogo[2][2]=="O"&&jogo[1][2]=="") {
+                jogo[1][2]="O";
+            }else if(jogo[1][2]=="O"&&jogo[2][2]=="O"&&jogo[0][2]=="") {
+                jogo[0][2]="O";
+            }else 
+            //Jogada diagonal 1
+            if(jogo[0][0]=="O"&&jogo[1][1]=="O"&&jogo[2][2]=="") {
+                jogo[2][2]="O";
+            }else if(jogo[0][0]=="O"&&jogo[2][2]=="O"&&jogo[1][1]=="") {
+                jogo[1][1]="O";
+            }else if(jogo[1][1]=="O"&&jogo[2][2]=="O"&&jogo[0][0]=="") {
+                jogo[0][0]="O";
+            }else 
+            //Jogada diagonal 2
+            if(jogo[0][2]=="O"&&jogo[1][1]=="O"&&jogo[2][0]=="") {
+                jogo[2][0]="O";
+            }else if(jogo[0][2]=="O"&&jogo[2][0]=="O"&&jogo[1][1]=="") {
+                jogo[1][1]="O";
+            }else if(jogo[2][0]=="O"&&jogo[1][1]=="O"&&jogo[0][2]=="") {
+                jogo[0][2]="O";
+            }
         }
         verifica=verificarVitoria();
         if(verifica!="") {

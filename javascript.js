@@ -3,7 +3,7 @@ let tabuleiro=[];
 let quemJoga=0; //0=jogador  1=cpu
 let verifica;
 let jogando=true;
-let nivel=1;
+let nivel=2;
 let jogadaCpu=1;
 let quemComeca;
 
@@ -171,6 +171,7 @@ function cpuJoga() {
             jogando=false;
         }
         atualizarTabuleiro();
+        jogada++;
         quemJoga=0;
     }
 }
@@ -264,6 +265,7 @@ function jogar(p) {
                 alert(`${verifica} venceu`);
                 jogando=false;
             }
+            jogada++;
             cpuJoga();
         }
     }
